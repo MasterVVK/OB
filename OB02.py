@@ -51,6 +51,16 @@ class Admin(User):
         else:
             print(f"Пользователь {user.get_name()} для удаления, не найден.")
 
+    def list_users(self):
+        for user in self._user_list:
+            print(user)
+    def show_all_users(self):
+        print("All users in the system:")
+        for user in self._user_list:
+            # Форматируем и печатаем информацию о каждом пользователе напрямую
+            user_info = f"ID: {user.get_user_id()}, Name: {user.get_name()}, Access Level: {user.get_access_level()}"
+            print(user_info)
+
     def _is_user_exist(self, user):
         return user in self._user_list
 
@@ -61,9 +71,15 @@ admin = Admin("admin1", "Просто Админ")
 
 admin.add_user(user1)
 admin.add_user(user2)
+admin.add_user(User(3,"Юзверь3"))
+admin.show_all_users()
 
 admin.add_user(user1)
 
 admin.remove_user(user1)
 
 admin.remove_user(user1)
+
+#admin.remove_user(User(3,"Юзверь3"))
+#admin.list_users()
+admin.show_all_users()
