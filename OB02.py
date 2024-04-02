@@ -56,10 +56,11 @@ class Admin(User):
             print(user)
     def show_all_users(self):
         print("All users in the system:")
+        # Сначала выводим информацию об администраторе
+        print(f"ID: {self.get_user_id()}, Name: {self.get_name()}, Access Level: {self.get_access_level()} (Admin)")
+        # Затем выводим информацию о всех пользователях
         for user in self._user_list:
-            # Форматируем и печатаем информацию о каждом пользователе напрямую
-            user_info = f"ID: {user.get_user_id()}, Name: {user.get_name()}, Access Level: {user.get_access_level()}"
-            print(user_info)
+            print(f"ID: {user.get_user_id()}, Name: {user.get_name()}, Access Level: {user.get_access_level()}")
 
     def _is_user_exist(self, user):
         return user in self._user_list
