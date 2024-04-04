@@ -44,6 +44,14 @@
 import random
 from abc import ABC, abstractmethod
 
+RED = "\033[31m"  # Красный текст
+GREEN = "\033[32m"  # Зеленый текст
+YELLOW = "\033[33m"  # Желтый текст
+BLUE = "\033[34m"  # Синий текст
+MAGENTA = "\033[35m"  # Малиновый текст
+CYAN = "\033[36m"  # Голубой текст
+RESET = "\033[0m"  # Сброс к стандартному цвету текста
+
 # Шаг 1: Абстрактный класс для оружия
 class Weapon(ABC):
     @abstractmethod
@@ -68,7 +76,7 @@ class Fighter:
         self.weapon = weapon
 
     def fight(self):
-        print(self.weapon.attack())
+        print(GREEN + self.weapon.attack() + RESET)
 
 # Шаг 4: Реализация боя
 class Monster:
@@ -82,7 +90,7 @@ def battle(fighter, monster):
     while not monster.is_defeated():
         fighter.fight()
         monster.health -= random.randint(4,7)
-    print("Монстр побежден!")
+    print(RED + "Монстр побежден!" + RESET)
 
 fighter_with_sword = Fighter(Sword())
 
