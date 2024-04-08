@@ -23,7 +23,7 @@ class Animal:
         self.age = age
 
     def make_sound(self):
-        return "Что-то звучить"
+        return "Что-то озвучить"
 
     def eat(self):
         return f"{self.name} ест."
