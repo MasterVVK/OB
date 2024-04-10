@@ -86,13 +86,14 @@ animal_sound(animals)
 
 zoo = Zoo()
 
-zoo.add_animal(Bird("Попугай", 3))
-zoo.add_animal(Mammal("Тигр", 4))
+with open('zoo.pkl', 'rb') as inp:
+    zoo = pickle.load(inp)
 
+#zoo.add_animal(Bird("Попугай", 3))
+#zoo.add_animal(Mammal("Тигр", 4))
 
-
-zoo.add_staff(ZooKeeper("Алексей"))
-zoo.add_staff(Veterinarian("Иван"))
+#zoo.add_staff(ZooKeeper("Алексей"))
+#zoo.add_staff(Veterinarian("Иван"))
 
 zoo.show_animals()
 zoo.show_staff()
