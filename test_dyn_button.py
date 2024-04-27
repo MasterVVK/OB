@@ -3,7 +3,7 @@ from telebot import types
 import sqlite3
 
 # Токен, полученный от BotFather
-TOKEN = ''
+TOKEN = '6983581354:AAF-_JI5Sn7ZaaSNQQ6MJetZZM8Icv3tvgU'
 bot = telebot.TeleBot(TOKEN)
 
 # Файл базы данных
